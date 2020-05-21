@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Liste des cours disponible</h1>
+
+  <%= button_to "Add New Course", new_course_path, method: :get %>
+
+  <ul>
+    <% @courses.each do |course| %>
+      <li><%= link_to course.name_course, course_path(course) %></li>
+    <% end %>
+  </ul>
+</div>

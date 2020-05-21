@@ -1,0 +1,7 @@
+<h1>Inscription aux cours</h1>
+
+  <%= simple_form_for @enrollment do |f| %>
+    <%= f.collection_select :course_id, Course.all, :id, :name_course, {prompt: "Choisissez votre cours"} %>
+    <%= f.collection_select :student_id, Student.all, :id, :first_name, {prompt: "Sélectionnez votre nom"} %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
