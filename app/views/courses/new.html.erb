@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1>Formulaire nouveau cours</h1>
+          <% if flash[:errors] %>
+            <% flash[:errors].each do |error| %>
+              <p><%= error %></p>
+            <% end %>
+          <% end %>
+
+          <%= simple_form_for @course do |f| %>
+            <%= f.input :name_course, label: "Nom du cours", placeholder: "Veuillez entrer le nom du cours" %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>

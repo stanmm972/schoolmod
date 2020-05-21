@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1>Formulaire nouvel étudiant</h1>
+          <% if flash[:errors] %>
+            <% flash[:errors].each do |error| %>
+              <p><%= error %></p>
+            <% end %>
+          <% end %>
+
+          <%= simple_form_for @student do |f| %>
+            <%= f.input :last_name, label: "Nom", placeholder: "Votre nom de famille" %>
+            <%= f.input :first_name, label: "Prénom", placeholder: "Votre prénom" %>
+            <%= f.input :birthday, label: "Date de naissance" %>
+            <%= f.input :email, label: "Courriel", placeholder: "moncourriel@me.com" %>
+            <%= f.button :submit, class: "btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>

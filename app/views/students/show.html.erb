@@ -1,0 +1,18 @@
+<h1>Profile étudiant</h1>
+
+<h3>Bonjour <%= @student.first_name %> dans votre page d'étudiant</h3>
+
+<h4>Cours</h4>
+
+<%= button_to "Register Course", new_enrollment_path, method: :get %>
+<ul>
+    <% @student.enrollments.each do |enrollment| %>
+      <li><%= enrollment.course.name_course %></li>
+      <%= button_to "Drop Enrollment", enrollment_path(enrollment), method: :delete %>
+    <% end %>
+</ul>
+
+<%= button_to "Edit Student", edit_student_path, method: :get %>
+<%= button_to "Destroy Student", student_path, method: :delete %>
+
+<%= link_to "Destroy Student", student_path %>
